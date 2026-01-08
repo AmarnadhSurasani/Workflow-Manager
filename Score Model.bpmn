@@ -1,0 +1,527 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:flowable="http://flowable.org/bpmn" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:sasbpmn="http://www.sas.com/xml/schema/bpmn" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.flowable.org/Test" typeLanguage="http://www.w3.org/2001/XMLSchema">
+    <process id="WFF4C37A9A-1A4A-4A2B-917E-A112312D182A" isExecutable="true" name="Score Model">
+        <extensionElements>
+            <sasbpmn:prompt dataObjectRef="WF6F66E8E2-BF68-4545-B5FD-5BEFB34A4FC4" id="WFCC811A49-C821-464D-B9C3-2B112533FBC7" name="Select Process Owner"/>
+            <sasbpmn:prompt dataObjectRef="WF9436F37A-BC9B-4B1D-B336-D631C88F4984" id="WF8B4CC364-A2D8-493A-97AD-B1D2E18EE856" name="Provide Library Name"/>
+            <sasbpmn:prompt dataObjectRef="WF27F6619E-BE85-4DE6-AEFC-4C143426EFCB" id="WFA7E9B1C8-4F6E-44AF-9147-6CB3EBCEE79B" name="Provide Dataset Name"/>
+            <sasbpmn:prompt dataObjectRef="WFB854AD62-79EE-43F4-88BB-C4D686183FF2" id="WFDB42FA2F-56A9-49B4-9DF1-1FFFD92E759A" name="Data suitable for scoring"/>
+            <sasbpmn:promptValue id="WF58191767-2CA6-48B1-8738-EC297382EE5D" name="Yes" type="xsd:boolean" value="true"/>
+            <sasbpmn:promptValue id="WFF6DDDC54-2F3B-417D-99A2-95545F74ACAE" name="No" type="xsd:boolean" value="false"/>
+            <sasbpmn:promptValue id="WFC7B64982-333B-4E2B-8F94-343BDB9B1644" name="PUBLIC" type="xsd:string" value="Public"/>
+            <sasbpmn:promptValue id="WF8B82FCC4-6B7C-48A2-93DD-4252125DE52E" name="CASUSER" type="xsd:string" value="Casuser"/>
+            <sasbpmn:promptValue id="WFDBECD2D8-B224-458A-B8B6-C6F7A8859AFB" name="HDFC_S2" type="xsd:string" value="HDFC_S2"/>
+            <sasbpmn:promptValue id="WF15D4BA9F-758F-4D3D-AEAA-BC3686C7219A" name="SAS_S2" type="xsd:string" value="SAS_S2"/>
+            <sasbpmn:diagram nodeDisplay="compact"/>
+        </extensionElements>
+        <dataObject id="WF6F66E8E2-BF68-4545-B5FD-5BEFB34A4FC4" itemSubjectRef="xsd:string" name="Process_Owner">
+            <extensionElements>
+                <flowable:value/>
+            </extensionElements>
+        </dataObject>
+        <dataObject id="WF27F6619E-BE85-4DE6-AEFC-4C143426EFCB" itemSubjectRef="xsd:string" name="Dataset_Name">
+            <extensionElements>
+                <flowable:value/>
+            </extensionElements>
+        </dataObject>
+        <dataObject id="WF9436F37A-BC9B-4B1D-B336-D631C88F4984" itemSubjectRef="xsd:string" name="Library_Name">
+            <extensionElements>
+                <flowable:value/>
+            </extensionElements>
+        </dataObject>
+        <dataObject id="WF8BFEB24B-DD1E-4A3B-A453-BACB4968A399" itemSubjectRef="xsd:string" name="projectName">
+            <extensionElements>
+                <flowable:value/>
+            </extensionElements>
+        </dataObject>
+        <dataObject id="WF8DC12B71-6DAA-4573-B542-DDCEAAC4A6AE" itemSubjectRef="xsd:string" name="projectID">
+            <extensionElements>
+                <flowable:value/>
+            </extensionElements>
+        </dataObject>
+        <dataObject id="WF1B11354D-DAA2-4DD6-BD78-F19921739A12" itemSubjectRef="xsd:string" name="function">
+            <extensionElements>
+                <flowable:value/>
+            </extensionElements>
+        </dataObject>
+        <dataObject id="WF6DBADB52-5CF1-438E-8542-92E23354BFBD" itemSubjectRef="xsd:string" name="championModel">
+            <extensionElements>
+                <flowable:value/>
+            </extensionElements>
+        </dataObject>
+        <dataObject id="WF4F56B54C-A53A-43AC-9A83-FAC44B7AB326" itemSubjectRef="xsd:string" name="championModelDeployed">
+            <extensionElements>
+                <flowable:value/>
+            </extensionElements>
+        </dataObject>
+        <dataObject id="WF6E242D31-9E46-4A3E-9CA9-5DAE39BD42CE" itemSubjectRef="xsd:string" name="projectStatus">
+            <extensionElements>
+                <flowable:value/>
+            </extensionElements>
+        </dataObject>
+        <dataObject id="WFB854AD62-79EE-43F4-88BB-C4D686183FF2" itemSubjectRef="xsd:boolean" name="univariatereview"/>
+        <dataObject id="WFA521F35A-45F2-41C3-B67A-CCCD914DF73E" itemSubjectRef="xsd:string" name="projectName_score">
+            <extensionElements>
+                <flowable:value/>
+            </extensionElements>
+        </dataObject>
+        <dataObject id="WF3F9DACAB-7DE6-4453-A634-C272986B5881" itemSubjectRef="xsd:string" name="modelProjectId">
+            <extensionElements>
+                <flowable:value/>
+            </extensionElements>
+        </dataObject>
+        <sequenceFlow id="WF5E815E83-E28B-47A8-AAE5-D17A7B3764AA" sourceRef="WF113B4387-4BA4-42E3-8D58-CE74EDFCDD13" targetRef="WF788A6353-B6D5-49EA-9C36-E1D2E331AA58"/>
+        <sequenceFlow id="WF58B928A3-4C24-4154-B28D-9A4C6EA47147" sourceRef="WF788A6353-B6D5-49EA-9C36-E1D2E331AA58" targetRef="WFB3C136B6-6C2F-4442-8CE5-A47E844B7F1E"/>
+        <sequenceFlow id="WFA6E21428-EC2B-438B-98EA-4B842971C6CE" sourceRef="WFB3C136B6-6C2F-4442-8CE5-A47E844B7F1E" targetRef="WFDFF7A3CD-F255-49C2-B698-3B178B8B6DB3"/>
+        <sequenceFlow id="WF11668D16-7739-4635-AC81-CDCB2DB464FC" sourceRef="WFDFF7A3CD-F255-49C2-B698-3B178B8B6DB3" targetRef="WFFA9A81A8-DD6C-41A5-8AF6-448C85F33172">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${projectStatus != 'deployed'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="WF59724812-D216-4B5B-8617-4AE8C2AAD2D7" sourceRef="WF3F84D197-8E59-4B97-96F3-9E3D5CE4CB91" targetRef="WFF6CFBFDD-F893-4188-B465-27FD37AA3DF8"/>
+        <sequenceFlow id="WFD6ECD3EA-B2A7-4BBE-892D-3FDE464346F7" sourceRef="WFFA9A81A8-DD6C-41A5-8AF6-448C85F33172" targetRef="WF53787F95-9CEB-4D66-9A4E-267F359622E6"/>
+        <sequenceFlow id="WF8EA53B8E-1751-462B-AECE-92B8CA43E315" sourceRef="WF53787F95-9CEB-4D66-9A4E-267F359622E6" targetRef="WFB3C136B6-6C2F-4442-8CE5-A47E844B7F1E"/>
+        <sequenceFlow id="WFABCBAB15-FD3E-4242-A8F8-2D8A377B9516" sourceRef="WFF6CFBFDD-F893-4188-B465-27FD37AA3DF8" targetRef="WF53787F95-9CEB-4D66-9A4E-267F359622E6"/>
+        <sequenceFlow id="WF8B369FC2-8BB1-49E4-AA3A-B92D6744E147" sourceRef="WFDFF7A3CD-F255-49C2-B698-3B178B8B6DB3" targetRef="WF9629D5B9-46D3-4DA4-8388-3794FB561C66"/>
+        <sequenceFlow id="WFDE598925-A4C1-4233-A1FE-E818D228C952" sourceRef="WF9629D5B9-46D3-4DA4-8388-3794FB561C66" targetRef="WF34184F63-3E88-4D1D-AEB5-B337E4DD8714"/>
+        <sequenceFlow id="WF5EA16752-BAE6-43B1-A5CE-A86FEFF53332" sourceRef="WF34184F63-3E88-4D1D-AEB5-B337E4DD8714" targetRef="WF8F95F198-46FE-4FC4-ABC3-23F14EC99142"/>
+        <sequenceFlow id="WFB27816EF-AA5D-43A7-9ECF-E479C1133A51" sourceRef="WF8F95F198-46FE-4FC4-ABC3-23F14EC99142" targetRef="WF3F84D197-8E59-4B97-96F3-9E3D5CE4CB91">
+            <conditionExpression xsi:type="tFormalExpression"><![CDATA[${univariatereview == 'True'}]]></conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="WFE37BF2B3-C18A-4F4D-98F7-97E84957345F" sourceRef="WF8F95F198-46FE-4FC4-ABC3-23F14EC99142" targetRef="WF53787F95-9CEB-4D66-9A4E-267F359622E6"/>
+        <startEvent id="WF113B4387-4BA4-42E3-8D58-CE74EDFCDD13" name="Start"/>
+        <userTask id="WF788A6353-B6D5-49EA-9C36-E1D2E331AA58" name="User Fields">
+            <extensionElements>
+                <sasbpmn:promptDefinition promptRef="WFCC811A49-C821-464D-B9C3-2B112533FBC7" required="true"/>
+                <sasbpmn:promptDefinition promptRef="WF8B4CC364-A2D8-493A-97AD-B1D2E18EE856" required="true">
+                    <sasbpmn:promptValueDefinition promptValueRef="WFC7B64982-333B-4E2B-8F94-343BDB9B1644"/>
+                    <sasbpmn:promptValueDefinition promptValueRef="WF8B82FCC4-6B7C-48A2-93DD-4252125DE52E"/>
+                    <sasbpmn:promptValueDefinition promptValueRef="WFDBECD2D8-B224-458A-B8B6-C6F7A8859AFB"/>
+                    <sasbpmn:promptValueDefinition promptValueRef="WF15D4BA9F-758F-4D3D-AEAA-BC3686C7219A"/>
+                </sasbpmn:promptDefinition>
+                <sasbpmn:promptDefinition promptRef="WFA7E9B1C8-4F6E-44AF-9147-6CB3EBCEE79B" required="true"/>
+                <sasbpmn:attributes>
+                    <sasbpmn:attribute name="Select Process Owner" predefined="true" value="select_potential_owner"/>
+                </sasbpmn:attributes>
+            </extensionElements>
+            <potentialOwner>
+                <resourceAssignmentExpression>
+                    <formalExpression>user(demo)</formalExpression>
+                </resourceAssignmentExpression>
+            </potentialOwner>
+        </userTask>
+        <serviceTask flowable:delegateExpression="${restTask}" id="WFB3C136B6-6C2F-4442-8CE5-A47E844B7F1E" name="Project MetaData">
+            <extensionElements>
+                <flowable:field name="method">
+                    <flowable:string><![CDATA[GET]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="bodyType">
+                    <flowable:string><![CDATA[EMPTY]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="url">
+                    <flowable:expression><![CDATA[/modelRepository/projects/${modelProjectId}]]></flowable:expression>
+                </flowable:field>
+                <flowable:field name="headers">
+                    <flowable:string><![CDATA[{"Accept":"application/json, application/vnd.sas.models.project.summary+json, application/vnd.sas.models.project+json, application/vnd.sas.models.project, application/vnd.sas.models.project.summary"}]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="statusCodes">
+                    <flowable:string><![CDATA[200,404]]></flowable:string>
+                </flowable:field>
+                <flowable:executionListener delegateExpression="${jsonPathListener}" event="end">
+                    <flowable:field name="json">
+                        <flowable:expression><![CDATA[${responseBody}]]></flowable:expression>
+                    </flowable:field>
+                    <flowable:field name="outputDataObjectName">
+                        <flowable:string><![CDATA[projectName]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jsonPath">
+                        <flowable:string><![CDATA[$.name]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="optional">
+                        <flowable:string><![CDATA[true]]></flowable:string>
+                    </flowable:field>
+                </flowable:executionListener>
+                <flowable:executionListener delegateExpression="${jsonPathListener}" event="end">
+                    <flowable:field name="json">
+                        <flowable:expression><![CDATA[${responseBody}]]></flowable:expression>
+                    </flowable:field>
+                    <flowable:field name="outputDataObjectName">
+                        <flowable:string><![CDATA[projectID]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jsonPath">
+                        <flowable:string><![CDATA[$.id]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="optional">
+                        <flowable:string><![CDATA[true]]></flowable:string>
+                    </flowable:field>
+                </flowable:executionListener>
+                <flowable:executionListener delegateExpression="${jsonPathListener}" event="end">
+                    <flowable:field name="json">
+                        <flowable:expression><![CDATA[${responseBody}]]></flowable:expression>
+                    </flowable:field>
+                    <flowable:field name="outputDataObjectName">
+                        <flowable:string><![CDATA[function]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jsonPath">
+                        <flowable:string><![CDATA[$.function]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="optional">
+                        <flowable:string><![CDATA[true]]></flowable:string>
+                    </flowable:field>
+                </flowable:executionListener>
+                <flowable:executionListener delegateExpression="${jsonPathListener}" event="end">
+                    <flowable:field name="json">
+                        <flowable:expression><![CDATA[${responseBody}]]></flowable:expression>
+                    </flowable:field>
+                    <flowable:field name="outputDataObjectName">
+                        <flowable:string><![CDATA[projectStatus]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jsonPath">
+                        <flowable:string><![CDATA[$.status]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="optional">
+                        <flowable:string><![CDATA[true]]></flowable:string>
+                    </flowable:field>
+                </flowable:executionListener>
+                <flowable:executionListener delegateExpression="${jsonPathListener}" event="end">
+                    <flowable:field name="json">
+                        <flowable:expression><![CDATA[${responseBody}]]></flowable:expression>
+                    </flowable:field>
+                    <flowable:field name="outputDataObjectName">
+                        <flowable:string><![CDATA[championModelDeployed]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jsonPath">
+                        <flowable:string><![CDATA[$.championModelName]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="optional">
+                        <flowable:string><![CDATA[true]]></flowable:string>
+                    </flowable:field>
+                </flowable:executionListener>
+            </extensionElements>
+        </serviceTask>
+        <exclusiveGateway default="WF8B369FC2-8BB1-49E4-AA3A-B92D6744E147" id="WFDFF7A3CD-F255-49C2-B698-3B178B8B6DB3" name="Decesion based on publoished model"/>
+        <serviceTask flowable:delegateExpression="${notificationTask}" id="WFFA9A81A8-DD6C-41A5-8AF6-448C85F33172" name="Notify User to deploy model">
+            <extensionElements>
+                <flowable:field name="level">
+                    <flowable:string><![CDATA[info]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="mail">
+                    <flowable:string><![CDATA[true]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="mailDeliveryType">
+                    <flowable:string><![CDATA[multipleRecipient]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="userIds">
+                    <flowable:string><![CDATA[demo]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="templateName">
+                    <flowable:string><![CDATA[Models for Project not yet deployed]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="templateParameters">
+                    <flowable:expression><![CDATA[{"projectName":"${projectName}"}]]></flowable:expression>
+                </flowable:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask flowable:delegateExpression="${jobTask}" flowable:triggerable="true" id="WF3F84D197-8E59-4B97-96F3-9E3D5CE4CB91" name="Score DATA">
+            <extensionElements>
+                <flowable:field name="jobDefinitionId">
+                    <flowable:string><![CDATA[aca4ce10-c878-4d91-9796-56b5cfa90d7a]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="method">
+                    <flowable:string><![CDATA[GET]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="bodyType">
+                    <flowable:string><![CDATA[EMPTY]]></flowable:string>
+                </flowable:field>
+                <flowable:executionListener delegateExpression="${jobResultListener}" event="end">
+                    <flowable:field name="outputTransientVariableName">
+                        <flowable:string><![CDATA[_CASHOST_]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jobVariableName">
+                        <flowable:string><![CDATA[_CASHOST_]]></flowable:string>
+                    </flowable:field>
+                </flowable:executionListener>
+                <flowable:executionListener delegateExpression="${jobStateListener}" event="end">
+                    <flowable:field name="outputTransientVariableName">
+                        <flowable:string><![CDATA[_CASHOST_]]></flowable:string>
+                    </flowable:field>
+                </flowable:executionListener>
+                <flowable:executionListener delegateExpression="${jobArgumentListener}" event="start">
+                    <flowable:field name="jobArgumentName">
+                        <flowable:string><![CDATA[_contextName]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jobArgumentValue">
+                        <flowable:string><![CDATA[SAS Studio compute context]]></flowable:string>
+                    </flowable:field>
+                </flowable:executionListener>
+                <flowable:executionListener delegateExpression="${jobArgumentListener}" event="start">
+                    <flowable:field name="jobArgumentName">
+                        <flowable:string><![CDATA[Library_Name]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jobArgumentValue">
+                        <flowable:expression><![CDATA[${Library_Name}]]></flowable:expression>
+                    </flowable:field>
+                </flowable:executionListener>
+                <flowable:executionListener delegateExpression="${jobArgumentListener}" event="start">
+                    <flowable:field name="jobArgumentName">
+                        <flowable:string><![CDATA[Dataset_Name]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jobArgumentValue">
+                        <flowable:expression><![CDATA[${Dataset_Name}]]></flowable:expression>
+                    </flowable:field>
+                </flowable:executionListener>
+                <flowable:executionListener delegateExpression="${jobArgumentListener}" event="start">
+                    <flowable:field name="jobArgumentName">
+                        <flowable:string><![CDATA[_action]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jobArgumentValue">
+                        <flowable:string><![CDATA[prompts,form,execute]]></flowable:string>
+                    </flowable:field>
+                </flowable:executionListener>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask flowable:delegateExpression="${notificationTask}" id="WFF6CFBFDD-F893-4188-B465-27FD37AA3DF8" name="Service task">
+            <extensionElements>
+                <flowable:field name="level">
+                    <flowable:string><![CDATA[info]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="mail">
+                    <flowable:string><![CDATA[true]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="mailDeliveryType">
+                    <flowable:string><![CDATA[multipleRecipient]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="userIds">
+                    <flowable:string><![CDATA[demo]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="templateName">
+                    <flowable:string><![CDATA[Model Scorning Completion]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="templateParameters">
+                    <flowable:expression><![CDATA[{"Process_Owner":"${Process_Owner}","Library_Name":"${Library_Name}","Dataset_Name":"${Dataset_Name}","championModel":"${championModel}","projectName":"${projectName}"}]]></flowable:expression>
+                </flowable:field>
+                <flowable:field name="method">
+                    <flowable:string><![CDATA[GET]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="bodyType">
+                    <flowable:string><![CDATA[EMPTY]]></flowable:string>
+                </flowable:field>
+            </extensionElements>
+        </serviceTask>
+        <intermediateCatchEvent id="WF53787F95-9CEB-4D66-9A4E-267F359622E6" name="Intermediate timer">
+            <timerEventDefinition>
+                <timeDuration>P1D</timeDuration>
+            </timerEventDefinition>
+        </intermediateCatchEvent>
+        <serviceTask flowable:delegateExpression="${jobTask}" flowable:triggerable="true" id="WF9629D5B9-46D3-4DA4-8388-3794FB561C66" name="Perform Univariate Analysis">
+            <extensionElements>
+                <flowable:field name="jobDefinitionId">
+                    <flowable:string><![CDATA[e77a8053-f2ea-43d0-b989-4be138299560]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="method">
+                    <flowable:string><![CDATA[GET]]></flowable:string>
+                </flowable:field>
+                <flowable:field name="bodyType">
+                    <flowable:string><![CDATA[EMPTY]]></flowable:string>
+                </flowable:field>
+                <flowable:executionListener delegateExpression="${jobResultListener}" event="end">
+                    <flowable:field name="outputTransientVariableName">
+                        <flowable:string><![CDATA[_CASHOST_]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jobVariableName">
+                        <flowable:string><![CDATA[_CASHOST_]]></flowable:string>
+                    </flowable:field>
+                </flowable:executionListener>
+                <flowable:executionListener delegateExpression="${jobStateListener}" event="end">
+                    <flowable:field name="outputTransientVariableName">
+                        <flowable:string><![CDATA[_CASHOST_]]></flowable:string>
+                    </flowable:field>
+                </flowable:executionListener>
+                <flowable:executionListener delegateExpression="${jobArgumentListener}" event="start">
+                    <flowable:field name="jobArgumentName">
+                        <flowable:string><![CDATA[_contextName]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jobArgumentValue">
+                        <flowable:string><![CDATA[SAS Studio compute context]]></flowable:string>
+                    </flowable:field>
+                </flowable:executionListener>
+                <flowable:executionListener delegateExpression="${jobArgumentListener}" event="start">
+                    <flowable:field name="jobArgumentName">
+                        <flowable:string><![CDATA[_Library_name]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jobArgumentValue">
+                        <flowable:expression><![CDATA[${Library_Name}]]></flowable:expression>
+                    </flowable:field>
+                </flowable:executionListener>
+                <flowable:executionListener delegateExpression="${jobArgumentListener}" event="start">
+                    <flowable:field name="jobArgumentName">
+                        <flowable:string><![CDATA[_Dataset_name]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jobArgumentValue">
+                        <flowable:expression><![CDATA[${Dataset_Name}]]></flowable:expression>
+                    </flowable:field>
+                </flowable:executionListener>
+                <flowable:executionListener delegateExpression="${jobArgumentListener}" event="start">
+                    <flowable:field name="jobArgumentName">
+                        <flowable:string><![CDATA[_action]]></flowable:string>
+                    </flowable:field>
+                    <flowable:field name="jobArgumentValue">
+                        <flowable:string><![CDATA[prompts,form,execute]]></flowable:string>
+                    </flowable:field>
+                </flowable:executionListener>
+            </extensionElements>
+        </serviceTask>
+        <userTask id="WF34184F63-3E88-4D1D-AEB5-B337E4DD8714" name="Review Univariate Analysis">
+            <extensionElements>
+                <sasbpmn:promptDefinition promptRef="WFDB42FA2F-56A9-49B4-9DF1-1FFFD92E759A" required="true">
+                    <sasbpmn:promptValueDefinition promptValueRef="WF58191767-2CA6-48B1-8738-EC297382EE5D"/>
+                    <sasbpmn:promptValueDefinition promptValueRef="WFF6DDDC54-2F3B-417D-99A2-95545F74ACAE"/>
+                </sasbpmn:promptDefinition>
+            </extensionElements>
+            <potentialOwner>
+                <resourceAssignmentExpression>
+                    <formalExpression>user(demo)</formalExpression>
+                </resourceAssignmentExpression>
+            </potentialOwner>
+        </userTask>
+        <exclusiveGateway default="WFE37BF2B3-C18A-4F4D-98F7-97E84957345F" id="WF8F95F198-46FE-4FC4-ABC3-23F14EC99142" name="Exclusive gateway"/>
+    </process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_WFF4C37A9A-1A4A-4A2B-917E-A112312D182A">
+        <bpmndi:BPMNPlane bpmnElement="WFF4C37A9A-1A4A-4A2B-917E-A112312D182A" id="BPMNPlane_WFF4C37A9A-1A4A-4A2B-917E-A112312D182A">
+            <bpmndi:BPMNShape bpmnElement="WF113B4387-4BA4-42E3-8D58-CE74EDFCDD13" id="BPMNShape_WF113B4387-4BA4-42E3-8D58-CE74EDFCDD13">
+                <omgdc:Bounds height="36.0" width="148.0" x="-560.0" y="10.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="WF788A6353-B6D5-49EA-9C36-E1D2E331AA58" id="BPMNShape_WF788A6353-B6D5-49EA-9C36-E1D2E331AA58">
+                <omgdc:Bounds height="36.0" width="148.0" x="-400.0" y="20.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="WFB3C136B6-6C2F-4442-8CE5-A47E844B7F1E" id="BPMNShape_WFB3C136B6-6C2F-4442-8CE5-A47E844B7F1E">
+                <omgdc:Bounds height="36.0" width="148.0" x="-240.0" y="20.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="WFDFF7A3CD-F255-49C2-B698-3B178B8B6DB3" id="BPMNShape_WFDFF7A3CD-F255-49C2-B698-3B178B8B6DB3">
+                <omgdc:Bounds height="16.0" width="16.0" x="-270.0" y="250.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="WFFA9A81A8-DD6C-41A5-8AF6-448C85F33172" id="BPMNShape_WFFA9A81A8-DD6C-41A5-8AF6-448C85F33172">
+                <omgdc:Bounds height="36.0" width="148.0" x="190.0" y="60.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="WF3F84D197-8E59-4B97-96F3-9E3D5CE4CB91" id="BPMNShape_WF3F84D197-8E59-4B97-96F3-9E3D5CE4CB91">
+                <omgdc:Bounds height="36.0" width="148.0" x="190.0" y="510.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="WFF6CFBFDD-F893-4188-B465-27FD37AA3DF8" id="BPMNShape_WFF6CFBFDD-F893-4188-B465-27FD37AA3DF8">
+                <omgdc:Bounds height="36.0" width="148.0" x="400.0" y="510.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="WF53787F95-9CEB-4D66-9A4E-267F359622E6" id="BPMNShape_WF53787F95-9CEB-4D66-9A4E-267F359622E6">
+                <omgdc:Bounds height="16.0" width="16.0" x="0.0" y="-10.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="WF9629D5B9-46D3-4DA4-8388-3794FB561C66" id="BPMNShape_WF9629D5B9-46D3-4DA4-8388-3794FB561C66">
+                <omgdc:Bounds height="36.0" width="148.0" x="-280.0" y="510.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="WF34184F63-3E88-4D1D-AEB5-B337E4DD8714" id="BPMNShape_WF34184F63-3E88-4D1D-AEB5-B337E4DD8714">
+                <omgdc:Bounds height="36.0" width="148.0" x="-30.0" y="510.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="WF8F95F198-46FE-4FC4-ABC3-23F14EC99142" id="BPMNShape_WF8F95F198-46FE-4FC4-ABC3-23F14EC99142">
+                <omgdc:Bounds height="16.0" width="16.0" x="70.0" y="370.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge bpmnElement="WF5E815E83-E28B-47A8-AAE5-D17A7B3764AA" id="BPMNEdge_WF5E815E83-E28B-47A8-AAE5-D17A7B3764AA">
+                <omgdi:waypoint x="-527.0" y="26.0"/>
+                <omgdi:waypoint x="-497.0" y="26.0"/>
+                <omgdi:waypoint x="-468.0" y="26.0"/>
+                <omgdi:waypoint x="-468.0" y="20.0"/>
+                <omgdi:waypoint x="-440.0" y="20.0"/>
+                <omgdi:waypoint x="-420.0" y="20.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="WF58B928A3-4C24-4154-B28D-9A4C6EA47147" id="BPMNEdge_WF58B928A3-4C24-4154-B28D-9A4C6EA47147">
+                <omgdi:waypoint x="-379.0" y="20.0"/>
+                <omgdi:waypoint x="-349.0" y="20.0"/>
+                <omgdi:waypoint x="-315.0" y="20.0"/>
+                <omgdi:waypoint x="-315.0" y="20.0"/>
+                <omgdi:waypoint x="-280.0" y="20.0"/>
+                <omgdi:waypoint x="-260.0" y="20.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="WFA6E21428-EC2B-438B-98EA-4B842971C6CE" id="BPMNEdge_WFA6E21428-EC2B-438B-98EA-4B842971C6CE">
+                <omgdi:waypoint x="-240.0" y="40.0"/>
+                <omgdi:waypoint x="-240.0" y="70.0"/>
+                <omgdi:waypoint x="-240.0" y="136.0"/>
+                <omgdi:waypoint x="-270.0" y="136.0"/>
+                <omgdi:waypoint x="-270.0" y="202.0"/>
+                <omgdi:waypoint x="-270.0" y="222.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="WF11668D16-7739-4635-AC81-CDCB2DB464FC" id="BPMNEdge_WF11668D16-7739-4635-AC81-CDCB2DB464FC">
+                <omgdi:waypoint x="-246.0" y="250.0"/>
+                <omgdi:waypoint x="-216.0" y="250.0"/>
+                <omgdi:waypoint x="-33.0" y="250.0"/>
+                <omgdi:waypoint x="-33.0" y="66.0"/>
+                <omgdi:waypoint x="149.0" y="66.0"/>
+                <omgdi:waypoint x="169.0" y="66.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="WF59724812-D216-4B5B-8617-4AE8C2AAD2D7" id="BPMNEdge_WF59724812-D216-4B5B-8617-4AE8C2AAD2D7">
+                <omgdi:waypoint x="210.0" y="510.0"/>
+                <omgdi:waypoint x="240.0" y="510.0"/>
+                <omgdi:waypoint x="300.0" y="510.0"/>
+                <omgdi:waypoint x="300.0" y="510.0"/>
+                <omgdi:waypoint x="359.0" y="510.0"/>
+                <omgdi:waypoint x="379.0" y="510.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="WFD6ECD3EA-B2A7-4BBE-892D-3FDE464346F7" id="BPMNEdge_WFD6ECD3EA-B2A7-4BBE-892D-3FDE464346F7">
+                <omgdi:waypoint x="169.0" y="53.0"/>
+                <omgdi:waypoint x="139.0" y="53.0"/>
+                <omgdi:waypoint x="96.0" y="53.0"/>
+                <omgdi:waypoint x="96.0" y="6.0"/>
+                <omgdi:waypoint x="53.0" y="6.0"/>
+                <omgdi:waypoint x="33.0" y="6.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="WF8EA53B8E-1751-462B-AECE-92B8CA43E315" id="BPMNEdge_WF8EA53B8E-1751-462B-AECE-92B8CA43E315">
+                <omgdi:waypoint x="0.0" y="6.0"/>
+                <omgdi:waypoint x="-30.0" y="6.0"/>
+                <omgdi:waypoint x="-114.0" y="6.0"/>
+                <omgdi:waypoint x="-114.0" y="20.0"/>
+                <omgdi:waypoint x="-199.0" y="20.0"/>
+                <omgdi:waypoint x="-219.0" y="20.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="WFABCBAB15-FD3E-4242-A8F8-2D8A377B9516" id="BPMNEdge_WFABCBAB15-FD3E-4242-A8F8-2D8A377B9516">
+                <omgdi:waypoint x="400.0" y="489.0"/>
+                <omgdi:waypoint x="400.0" y="459.0"/>
+                <omgdi:waypoint x="400.0" y="251.0"/>
+                <omgdi:waypoint x="22.0" y="251.0"/>
+                <omgdi:waypoint x="22.0" y="43.0"/>
+                <omgdi:waypoint x="22.0" y="23.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="WF8B369FC2-8BB1-49E4-AA3A-B92D6744E147" id="BPMNEdge_WF8B369FC2-8BB1-49E4-AA3A-B92D6744E147">
+                <omgdi:waypoint x="-270.0" y="277.0"/>
+                <omgdi:waypoint x="-270.0" y="307.0"/>
+                <omgdi:waypoint x="-270.0" y="388.0"/>
+                <omgdi:waypoint x="-280.0" y="388.0"/>
+                <omgdi:waypoint x="-280.0" y="469.0"/>
+                <omgdi:waypoint x="-280.0" y="489.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="WFDE598925-A4C1-4233-A1FE-E818D228C952" id="BPMNEdge_WFDE598925-A4C1-4233-A1FE-E818D228C952">
+                <omgdi:waypoint x="-259.0" y="510.0"/>
+                <omgdi:waypoint x="-229.0" y="510.0"/>
+                <omgdi:waypoint x="-150.0" y="510.0"/>
+                <omgdi:waypoint x="-150.0" y="510.0"/>
+                <omgdi:waypoint x="-70.0" y="510.0"/>
+                <omgdi:waypoint x="-50.0" y="510.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="WF5EA16752-BAE6-43B1-A5CE-A86FEFF53332" id="BPMNEdge_WF5EA16752-BAE6-43B1-A5CE-A86FEFF53332">
+                <omgdi:waypoint x="-30.0" y="489.0"/>
+                <omgdi:waypoint x="-30.0" y="459.0"/>
+                <omgdi:waypoint x="-30.0" y="438.0"/>
+                <omgdi:waypoint x="62.0" y="438.0"/>
+                <omgdi:waypoint x="62.0" y="417.0"/>
+                <omgdi:waypoint x="62.0" y="397.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="WFB27816EF-AA5D-43A7-9ECF-E479C1133A51" id="BPMNEdge_WFB27816EF-AA5D-43A7-9ECF-E479C1133A51">
+                <omgdi:waypoint x="78.0" y="397.0"/>
+                <omgdi:waypoint x="78.0" y="427.0"/>
+                <omgdi:waypoint x="78.0" y="448.0"/>
+                <omgdi:waypoint x="190.0" y="448.0"/>
+                <omgdi:waypoint x="190.0" y="469.0"/>
+                <omgdi:waypoint x="190.0" y="489.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="WFE37BF2B3-C18A-4F4D-98F7-97E84957345F" id="BPMNEdge_WFE37BF2B3-C18A-4F4D-98F7-97E84957345F">
+                <omgdi:waypoint x="70.0" y="342.0"/>
+                <omgdi:waypoint x="70.0" y="312.0"/>
+                <omgdi:waypoint x="70.0" y="181.0"/>
+                <omgdi:waypoint x="11.0" y="181.0"/>
+                <omgdi:waypoint x="11.0" y="51.0"/>
+                <omgdi:waypoint x="11.0" y="23.0"/>
+            </bpmndi:BPMNEdge>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</definitions>
